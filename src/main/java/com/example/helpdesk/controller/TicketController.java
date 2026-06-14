@@ -23,13 +23,6 @@ public class TicketController {
         this.ticketService = ticketService;
     }
 
-    @GetMapping
-    public String showTickets(Model model) {
-        model.addAttribute("pageTitle", "Заявки — Help Desk");
-        model.addAttribute("tickets", ticketService.getAllTickets());
-        return "tickets";
-    }
-
     @GetMapping("/new")
     public String showCreateForm(Model model) {
         model.addAttribute("ticket", new TicketCreateDto());
